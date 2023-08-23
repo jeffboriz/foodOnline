@@ -111,6 +111,10 @@ class UserProfile(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
 
 
+    def full_address(self):
+        return f'{self.address_line_1},{self.address_line_2}'
+
+
     def __str__(self):
         return self.user.email
         
